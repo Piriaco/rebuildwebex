@@ -4,10 +4,12 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace rebuild
 {
+    
     public partial class Form1 : Form
     {
         DataTable table = new DataTable();
@@ -45,111 +47,120 @@ namespace rebuild
         void Rebuild(List<FileItems> inputFiles, string outputFile)
         {
 
+            Stream stream = null;
 
-                using (FileStream stream = new FileStream(outputFile,
-                                                      FileMode.OpenOrCreate,
-                                                      FileAccess.ReadWrite))
+            try
+            {
+                stream = new FileStream(outputFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                using (StreamWriter writer = new StreamWriter(stream))
                 {
-                BinaryReader reader = new BinaryReader(stream);
-                BinaryWriter writer = new BinaryWriter(stream);
-
-                ARF_HEADER arf_head = new ARF_HEADER
-                {
-                    e_magic     =       0x00020001,
-                    e_unknown   =       0x00000000,
-                    e_filesize  =       0xadafea,
-                    e_reserved0 =       0,
-                    e_nsections =       0x1b,
-                    e_reserved1 =       0
-                };
-
-                int video = 0;
-
-                ARF_ITEMS[] arf_item = new ARF_ITEMS[arf_head.e_nsections];
-
-                long Offset = Marshal.SizeOf(typeof(ARF_ITEMS)) * arf_head.e_nsections + Marshal.SizeOf(typeof(ARF_HEADER));
-
-                for (int x = 0; x < inputFiles.Count; x++)
-                {
-                    
-                    FileInfo f = new FileInfo(inputFiles[x].fileName);
-                    FileSystemInfo f1 = new FileInfo(inputFiles[x].fileName);
-                    long len = f.Length;
-                    string name = f1.Name;
-
-                    FileItems.SegmentType id = inputFiles[x].id;
-
-                    arf_item[x].e_id =            (uint) id;
-                    arf_item[x].e_sectionoffset = (uint) Offset;
-                    arf_item[x].e_sectionlen =    (uint) f.Length;
-
-
-                    arf_item[x].e_indice = 0;
-
-                    if (id == FileItems.SegmentType.video || id == FileItems.SegmentType.video_idx)
-                        arf_item[x].e_indice = (uint)video;
-
-                    if (id == FileItems.SegmentType.video_idx)
-                        video++;
-
-                    arf_item[x].e_reserved1 = 0;
-                    arf_item[x].e_reserved2 = 0;
-                    arf_item[x].e_reserved3 = 0;
-                    arf_item[x].e_reserved4 = 0;
-                    Offset += f.Length + 1;
-                }
-
-                arf_head.e_filesize = (uint)(Offset - 1);
-                writer.Write(GetBytes(arf_head));
-
-                for (int x = 0; x < arf_head.e_nsections; x++)
-                    writer.Write(GetBytes(arf_item[x]));
-
-
-
-                Offset = 0;
-
-                for (int x = 0; x < inputFiles.Count; x++)
-                {
-                    FileStream streamOrigin =   new FileStream(inputFiles[x].fileName, FileMode.Open, FileAccess.Read);
-                    BinaryReader readerOrigin = new BinaryReader(streamOrigin);
-
-                    try
+                    BinaryReader reader = new BinaryReader(stream);
+                    ARF_HEADER arf_head = new ARF_HEADER
                     {
-                        var bytes = readerOrigin.ReadBytes((int)streamOrigin.Length);
-                        writer.Write(bytes);
+                        e_magic = 0x00020001,
+                        e_unknown = 0x00000000,
+                        e_filesize = 0xadafea,
+                        e_reserved0 = 0,
+                        e_nsections = 0x1b,
+                        e_reserved1 = 0
+                    };
+
+                    int video = 0;
+
+                    ARF_ITEMS[] arf_item = new ARF_ITEMS[arf_head.e_nsections];
+
+                    long Offset = Marshal.SizeOf(typeof(ARF_ITEMS)) * arf_head.e_nsections + Marshal.SizeOf(typeof(ARF_HEADER));
+
+                    for (int x = 0; x < inputFiles.Count; x++)
+                    {
+
+                        FileInfo f = new FileInfo(inputFiles[x].fileName);
+                        FileSystemInfo f1 = new FileInfo(inputFiles[x].fileName);
+                        long len = f.Length;
+                        string name = f1.Name;
+
+                        FileItems.SegmentType id = inputFiles[x].id;
+
+                        arf_item[x].e_id = (uint)id;
+                        arf_item[x].e_sectionoffset = (uint)Offset;
+                        arf_item[x].e_sectionlen = (uint)f.Length;
+
+
+                        arf_item[x].e_indice = 0;
+
+                        if (id == FileItems.SegmentType.video || id == FileItems.SegmentType.video_idx)
+                            arf_item[x].e_indice = (uint)video;
+
+                        if (id == FileItems.SegmentType.video_idx)
+                            video++;
+
+                        arf_item[x].e_reserved1 = 0;
+                        arf_item[x].e_reserved2 = 0;
+                        arf_item[x].e_reserved3 = 0;
+                        arf_item[x].e_reserved4 = 0;
+                        Offset += f.Length + 1;
+                    }
+
+                    arf_head.e_filesize = (uint)(Offset - 1);
+                    writer.Write(GetBytes(arf_head));
+
+                    for (int x = 0; x < arf_head.e_nsections; x++)
+                        writer.Write(GetBytes(arf_item[x]));
+
+
+
+                    Offset = 0;
+
+                    foreach (FileItems file in inputFiles)
+                    {
+
+                        FileStream streamOrigin = new FileStream(file.fileName, FileMode.Open, FileAccess.Read);
+                        BinaryReader readerOrigin = new BinaryReader(streamOrigin);
+                        
+                        try
+                        {
+                            
+                            var bytes = readerOrigin.ReadBytes((int)streamOrigin.Length);
+                            writer.Write(bytes);
+
+                        }
+                        catch (OutOfMemoryException)
+                        {
+                            MessageBox.Show("Error", "The program just ran out of memory!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Info", "This may be fixed someday...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            Application.Exit();
+                        }
+
+                        Offset += streamOrigin.Length;
+                            //long  pad = (Offset % 4);
+                            //if (pad!=0)
+                        writer.Write((byte)0);//x);
+
+                        // writer.Flush();
 
                     }
-                    catch (OutOfMemoryException)
-                    {
-                        MessageBox.Show("Error", "The program just ran out of memory!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        MessageBox.Show("Info", "This may be fixed someday...", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        Application.Exit();
-                    }
-                    
-                    Offset += streamOrigin.Length;
-                    //long  pad = (Offset % 4);
-                    //if (pad!=0)
-                    writer.Write((byte)0);//x);
-                    
-
+                    logs.Items.Add("[=] Re-constructed File: " + outputFile);
+                    MessageBox.Show("Reconstruction completed", "Corrected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    writer.Dispose();
+                    writer.Close();
 
                 }
 
-                writer.Flush();
-                writer.Close();
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("The directory is not valid", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-                logs.Items.Add("[=] Re-constructed File: " + outputFile);
+            finally
+            {
+                if (stream != null)
+                    stream.Dispose();
 
-                System.Threading.Thread.Sleep(1000);
+            }
 
-                System.Threading.Thread.Sleep(1000);
-
-                MessageBox.Show("Reconstruction completed", "Corrected", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-          
-        
         }
 
         private DataRow AddFileToGrid(string archive)
@@ -466,20 +477,7 @@ namespace rebuild
         }
 
 
-        public T FromBinaryReader<T>(BinaryReader reader)
-        {
-            // Read in a byte array
-            byte[] bytes = reader.ReadBytes(Marshal.SizeOf(typeof(T)));
-
-            // Pin the managed memory while, copy it out the data, then unpin it
-            GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
-            T theStructure = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
-            handle.Free();
-
-            return theStructure;
-        }
-
-        public  byte[] GetBytes<T>(T str)
+        public byte[] GetBytes<T>(T str)
         {
             int size = Marshal.SizeOf(str);
             byte[] arr = new byte[size];
@@ -489,6 +487,7 @@ namespace rebuild
             Marshal.FreeHGlobal(ptr);
             return arr;
         }
+
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
@@ -511,7 +510,7 @@ namespace rebuild
             Go();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
