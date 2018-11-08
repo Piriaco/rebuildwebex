@@ -44,11 +44,12 @@ namespace rebuild
 
         void Rebuild(List<FileItems> inputFiles, string outputFile)
         {
-                UpdateProgress(10);
+
+
                 using (FileStream stream = new FileStream(outputFile,
                                                       FileMode.OpenOrCreate,
                                                       FileAccess.ReadWrite))
-            {
+                {
                 BinaryReader reader = new BinaryReader(stream);
                 BinaryWriter writer = new BinaryWriter(stream);
 
@@ -70,17 +71,17 @@ namespace rebuild
 
                 for (int x = 0; x < inputFiles.Count; x++)
                 {
-
-                    FileInfo f = new FileInfo(inputFiles[x].FileName);
-                    FileSystemInfo f1 = new FileInfo(inputFiles[x].FileName);
+                    
+                    FileInfo f = new FileInfo(inputFiles[x].fileName);
+                    FileSystemInfo f1 = new FileInfo(inputFiles[x].fileName);
                     long len = f.Length;
                     string name = f1.Name;
 
                     FileItems.SegmentType id = inputFiles[x].id;
 
-                    arf_item[x].e_id = (uint)id;
-                    arf_item[x].e_sectionoffset = (uint)Offset;
-                    arf_item[x].e_sectionlen = (uint)f.Length;
+                    arf_item[x].e_id =            (uint) id;
+                    arf_item[x].e_sectionoffset = (uint) Offset;
+                    arf_item[x].e_sectionlen =    (uint) f.Length;
 
 
                     arf_item[x].e_indice = 0;
@@ -104,22 +105,22 @@ namespace rebuild
                 for (int x = 0; x < arf_head.e_nsections; x++)
                     writer.Write(GetBytes(arf_item[x]));
 
-                UpdateProgress(15);
+
 
                 Offset = 0;
 
                 for (int x = 0; x < inputFiles.Count; x++)
                 {
-                    FileStream streamOrigin = new FileStream(inputFiles[x].FileName, FileMode.Open, FileAccess.Read);
-                    BinaryReader reaferOrigin = new BinaryReader(streamOrigin);
-                    byte[] bytes = reaferOrigin.ReadBytes((int)streamOrigin.Length);
+                    FileStream streamOrigin =   new FileStream(inputFiles[x].fileName, FileMode.Open, FileAccess.Read);
+                    BinaryReader readerOrigin = new BinaryReader(streamOrigin);
 
-                    try {
-
+                    try
+                    {
+                        var bytes = readerOrigin.ReadBytes((int)streamOrigin.Length);
                         writer.Write(bytes);
 
                     }
-                    catch (OutOfMemoryException e)
+                    catch (OutOfMemoryException)
                     {
                         MessageBox.Show("Error", "The program just ran out of memory!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         MessageBox.Show("Info", "This may be fixed someday...", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,22 +133,21 @@ namespace rebuild
                     //if (pad!=0)
                     writer.Write((byte)0);//x);
                     
-                    UpdateProgress(15 + 2*x);
+
 
                 }
 
                 writer.Flush();
                 writer.Close();
-                UpdateProgress(65);
-                logs.Items.Add("[=] Re-constructed File: " + outputFile);
+
                 logs.Items.Add("[=] Re-constructed File: " + outputFile);
 
                 System.Threading.Thread.Sleep(1000);
-                UpdateProgress(78);
+
                 System.Threading.Thread.Sleep(1000);
-                UpdateProgress(100);
+
                 MessageBox.Show("Reconstruction completed", "Corrected", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                }
           
         
         }
@@ -155,22 +155,21 @@ namespace rebuild
         private DataRow AddFileToGrid(string archive)
         {
            
-            FileInfo f =        null;
-            FileSystemInfo f1 = null;
-
-            f = new FileInfo(archive);
-            f1 = new FileInfo(archive);
+            FileInfo       fileInfo  = new FileInfo(archive);
+            FileSystemInfo fileSysInfo = new FileInfo(archive);
 
             datarow = table.NewRow();
 
             //Get File name of each file name
-            datarow["Real_Filename"] = f1.Name;
-            datarow["File_Name"] = GetLastPart(f1.Name);
+            datarow["Real_Filename"] = fileSysInfo.Name;
+            datarow["File_Name"]     = GetLastPart(fileSysInfo.Name);
+
             //Get File Type/Extension of each file 
-            datarow["File_Type"] = f1.Extension;
+            datarow["File_Type"]     = fileSysInfo.Extension;
+
             //Get File Size of each file in KB format
-            datarow["File_Size"] = (f.Length).ToString();
-            datarow["Create_Date"] = (f1.CreationTime).ToString();
+            datarow["File_Size"]     = fileInfo.Length.ToString();
+            datarow["Create_Date"]   = fileSysInfo.CreationTime.ToString();
             return datarow;
         }
 
@@ -422,13 +421,13 @@ namespace rebuild
                 logs.Items.Add("[Error] Folder not found.");
             try
             {
-                dataGridView1.Columns[0].Width = 140;
+                dataGridView1.Columns[0].Width = 150;
                 dataGridView1.Columns[1].Width = 80;
                 dataGridView1.Columns[2].Width = 74;
                 dataGridView1.Columns[3].Width = 70;
                 dataGridView1.Columns[4].Width = 150;
             }
-            catch(Exception e)
+            catch (Exception)
             {
             }
             return true;
@@ -522,19 +521,11 @@ namespace rebuild
 
         }
 
-        private void textLog_TextChanged(object sender, EventArgs e)
+        private void TextLog_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-
-        private void UpdateProgress(int value)
-
-        {
-
-            progressBar1.Value = value % 100;
-
-        }
 
     }
 
@@ -560,22 +551,22 @@ namespace rebuild
 
         };
 
-        public string FileName;
+        public string fileName;
         public SegmentType id;
         public FileItems(string filename, SegmentType ts)
         {
-            FileName = filename;
+            fileName = filename;
             id = ts;
         }
     }
     public struct ARF_HEADER
     {    
         public UInt32 e_magic;                // Magic number 
-        public UInt32 e_unknown;              // Unknown
+        public UInt32 e_unknown;              
         public UInt32 e_filesize;             // File size
-        public UInt32 e_reserved0;            // 
+        public UInt32 e_reserved0;            
         public UInt32 e_nsections;            // Number of sections
-        public UInt32 e_reserved1;            // 
+        public UInt32 e_reserved1;            
         
     }
 
