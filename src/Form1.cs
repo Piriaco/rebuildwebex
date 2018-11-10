@@ -4,7 +4,6 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace rebuild
@@ -12,7 +11,7 @@ namespace rebuild
     
     public partial class Form1 : Form
     {
-        DataTable table = new DataTable();
+        private DataTable table = new DataTable();
         DataRow datarow;
         List<FileItems> containerList = new List<FileItems>();
 
@@ -57,12 +56,12 @@ namespace rebuild
                     BinaryReader reader = new BinaryReader(stream);
                     ARF_HEADER arf_head = new ARF_HEADER
                     {
-                        e_magic = 0x00020001,
-                        e_unknown = 0x00000000,
-                        e_filesize = 0xadafea,
-                        e_reserved0 = 0,
-                        e_nsections = 0x1b,
-                        e_reserved1 = 0
+                        e_magic =       0x00020001,
+                        e_unknown =     0x00000000,
+                        e_filesize =    0xadafea,
+                        e_reserved0 =   0,
+                        e_nsections =   0x1b,
+                        e_reserved1 =   0
                     };
 
                     int video = 0;
@@ -76,7 +75,6 @@ namespace rebuild
 
                         FileInfo f = new FileInfo(inputFiles[x].fileName);
                         FileSystemInfo f1 = new FileInfo(inputFiles[x].fileName);
-                        long len = f.Length;
                         string name = f1.Name;
 
                         FileItems.SegmentType id = inputFiles[x].id;
@@ -114,7 +112,7 @@ namespace rebuild
                     foreach (FileItems file in inputFiles)
                     {
 
-                        FileStream streamOrigin = new FileStream(file.fileName, FileMode.Open, FileAccess.Read);
+                        FileStream streamOrigin =   new FileStream(file.fileName, FileMode.Open, FileAccess.Read);
                         BinaryReader readerOrigin = new BinaryReader(streamOrigin);
                         
                         try
@@ -452,7 +450,7 @@ namespace rebuild
             DialogResult result = fbd.ShowDialog();
 
             if (result == DialogResult.OK)
-                pathText.Text = Path.GetDirectoryName(fbd.SelectedPath);
+                pathText.Text = fbd.SelectedPath;
             else
                 pathText.Text = "";
         }

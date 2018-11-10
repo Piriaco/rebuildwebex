@@ -1,0 +1,10 @@
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\bin\x64\Release\rebuild.exe
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\bin\x64\Release\rebuild.pdb
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.csprojAssemblyReference.cache
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.Form1.resources
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.Form2.resources
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.Properties.Resources.resources
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.csproj.GenerateResource.cache
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.csproj.CoreCompileInputs.cache
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.exe
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Release\rebuild.pdb
