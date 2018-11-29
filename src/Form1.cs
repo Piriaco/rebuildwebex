@@ -420,7 +420,7 @@ namespace rebuild
             if (path.Length > 0)
             {
                 if (FillDataGrid(path))
-                    Rebuild(containerList, path + "/rebuild.arf");
+                    Rebuild(containerList, Path.Combine(path, "rebuild.arf"));
                 else
                     ToLog("[--] Required files not found.");
             }

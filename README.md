@@ -9,13 +9,19 @@ based on [Rebuild Webex 0.1](https://github.com/skuater/rebuildwebex)
 
 ## Binaries
 
-There are three binaries in the *build* folder: a Linux binary, a MacOS binary and a Windows binary.
+~~There are three binaries in the *builds* folder: a Linux binary, a MacOS binary and a Windows binary.~~
+
+Right now there is only one binary in the *builds* folder: a Windows binary.
+
+There will be Linux and MacOS binaries ***as soon as possible***.
+
+Until then, you can use the Windows version in Linux and MacOS using the Mono runtime.
 
 All the binaries have been compiled for x64 architecture.
 
-- The Linux binary has been compiled against a Debian 9 x64 target, and it contains all the libraries and the Mono runtime necessary to execute it. You do not need to install anything, just execute it from CLI.
+~~- The Linux binary has been compiled against a Debian 9 x64 target, and it contains all the libraries and the Mono runtime necessary to execute it. You do not need to install anything, just execute it from CLI.~~
 
-- The MacOS binary has been compiled against a OSX 10.7 x64 target, and it contains all the libraries and the Mono runtime necessary to execute it. You do not need to install anything, just execute it from CLI.
+~~- The MacOS binary has been compiled against a OSX 10.7 x64 target, and it contains all the libraries and the Mono runtime necessary to execute it. You do not need to install anything, just execute it from CLI.~~
 
 - The Windows binary can be also executed in Linux or MacOS using the Mono runtime.
 
