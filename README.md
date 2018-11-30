@@ -11,7 +11,7 @@ based on [Rebuild Webex 0.1](https://github.com/skuater/rebuildwebex)
 
 There are two binaries in the *builds* folder: a Linux binary and a Windows binary.
 
-> There will be a MacOS binary ***as soon as possible***.
+> There will be a MacOS binary ***as soon as possible***.  
 > Until then, you can use the Windows version in MacOS using the Mono runtime.
 
 All the binaries have been compiled for x64 architecture.
