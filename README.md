@@ -16,9 +16,8 @@ There are two binaries in the *builds* folder: a Linux binary and a Windows bina
 
 All the binaries have been compiled for x64 architecture.
 
-- The Linux binary contains all the libraries and the Mono runtime necessary to execute it. You should not need to install anything, just execute it from CLI `./rebuild`. 
-If there is a `System.DllNotFoundException: libgdiplus.so.0` error, delete the *libgdiplus.so.0* file from this folder `rm libgdiplus.so.0` 
-and install it from your distribution package management system. For example, in *Debian* based distros, it would be `sudo apt install libgdiplus`.
+- The Linux binary contains the Mono runtime necessary to execute it. Just run it from CLI with `./rebuild`. 
+In order to run it properly, you need to install the *libgdiplus* library from your distribution package management system. For example, in *Debian* based distros, it would be `sudo apt install libgdiplus`.
 
 ~~- The MacOS binary has been compiled against a OSX 10.7 x64 target, and it contains all the libraries and the Mono runtime necessary to execute it. You do not need to install anything, just execute it from CLI.~~
 
@@ -57,3 +56,8 @@ The steps to use it are:
 - ***codersk*** (changes to pick selected folder path)
 - ***varunpillai*** (WebEx audio changes) 
 - ***Piruzzolo*** (UI refactor, eng translation and fixes)
+
+## TODO
+
+- Build native binary for MacOS.
+- Build native binary for Linux without need to install any dependencies (There is a bug in mkbundle that do not embed the necessary libraries properly).
