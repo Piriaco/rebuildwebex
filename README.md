@@ -12,12 +12,11 @@ based on [Rebuild Webex 0.1](https://github.com/skuater/rebuildwebex)
 There are two binaries in the *builds* folder: a Linux binary and a Windows binary.
 
 > There will be a MacOS binary ***as soon as possible***.
-
 > Until then, you can use the Windows version in MacOS using the Mono runtime.
 
 All the binaries have been compiled for x64 architecture.
 
-- The Linux binary contains all the libraries and the Mono runtime necessary to execute it. You should need to install anything, just execute it from CLI `./rebuild`. 
+- The Linux binary contains all the libraries and the Mono runtime necessary to execute it. You should not need to install anything, just execute it from CLI `./rebuild`. 
 If there is a `System.DllNotFoundException: libgdiplus.so.0` error, delete the *libgdiplus.so.0* file from this folder `rm libgdiplus.so.0` 
 and install it from your distribution package management system. For example, in *Debian* based distros, it would be `sudo apt install libgdiplus`.
 
