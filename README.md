@@ -9,19 +9,16 @@ based on [Rebuild Webex 0.1](https://github.com/skuater/rebuildwebex)
 
 ## Binaries
 
-There are two binaries in the *builds* folder: a Linux binary and a Windows binary.
-
-> There will be a MacOS binary ***as soon as possible***.  
-> Until then, you can use the Windows version in MacOS using the Mono runtime.
+There are two binaries in the *builds* folder: a Linux binary, a MacOS and a Windows binary.
 
 All the binaries have been compiled for x64 architecture.
 
 - The Linux binary contains the Mono runtime necessary to execute it. Just run it from CLI with `./rebuild`. 
 In order to run it properly, you need to install the *libgdiplus* library from your distribution package management system. For example, in *Debian* based distros, it would be `sudo apt install libgdiplus`.
 
-~~- The MacOS binary has been compiled against a OSX 10.7 x64 target, and it contains all the libraries and the Mono runtime necessary to execute it. You do not need to install anything, just execute it from CLI.~~
+- The MacOS binary has been compiled as a 32 bits binary due to Carbon driver has not been ported to 64 bits. It needs Mono runtime installed to execute it. Just run it from CLI with `mono --arch=32 rebuild.exe`.
 
-- The Windows binary can be also executed in Linux or MacOS using the Mono runtime.
+- The Windows binary is executed just double clicking on it as any .exe file. It can be also executed in Linux or MacOS using the Mono runtime and the instructions written below.
 
 The *src* has been refactored in order to be cross-platform and compatible with [Mono](https://www.mono-project.com/) compilation. It also can be compiled for x86 architectures.
 
@@ -42,6 +39,7 @@ The steps to use it are:
 3. Without close the player, locate the folder with the session data. Order by date and it should show up as a folder whose name has several numbers.
 	- In Windows, the path is C:\Users\[user_name]\AppData\Local\Temp\[XXXXXXXX]
 	- In Linux, the path is /home/[user_name]/.webex/500/[XXXXXXXX]
+	- In MacOS, the path is /Users/[user_name]/Library/Application\ Support/WebEx\ Folder/64_500/[XXXXXXXX]
 4. Copy the number folder to a new location.
 5. Open the program and load the folder copied before.
 6. Click in the 'Go' button and wait until it finishes.
@@ -59,5 +57,5 @@ The steps to use it are:
 
 ## TODO
 
-- Build native binary for MacOS.
+- Build native binary for MacOS once the Carbon driver is completely available in 64 bits.
 - Build native binary for Linux without need to install any dependencies (There is a bug in mkbundle that do not embed the necessary libraries properly).
