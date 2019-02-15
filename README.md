@@ -1,5 +1,5 @@
 
-# Rebuild Webex v0.2
+# Rebuild Webex v0.3
 
 based on [Rebuild Webex 0.1](https://github.com/skuater/rebuildwebex)
 > Recovery tool for WebEx sessions. 
@@ -7,22 +7,29 @@ based on [Rebuild Webex 0.1](https://github.com/skuater/rebuildwebex)
 * Presented in Rootedcon 2015 by @sanguinawer
 * Forked from Piruzzolo's branch.
 
+## What is new?
+
+New version: **0.3**
+
+- The version 0.3 fixes a critical issue with the indexes. If there was more than one file of the same type (e.g. two wav files), the previous version built the file with only the first file leading to an incomplete file. Now, the tool is able to generate the file correctly regardless of how many files of the same type there are.
+
+- Now there is only one binary that can be used in any OS installing the Mono runtime.
+
 ## Binaries
 
-There are two binaries in the *builds* folder: a Linux binary, a MacOS and a Windows binary.
+There is only a binary in the *builds* folder that can be used in any OS.
 
-All the binaries have been compiled for x64 architecture.
+The binary has been compiled for x64 architectures.
 
-- The Linux binary contains the Mono runtime necessary to execute it. Just run it from CLI with `./rebuild`. 
-In order to run it properly, you need to install the *libgdiplus* library from your distribution package management system. For example, in *Debian* based distros, it would be `sudo apt install libgdiplus`.
+- In Linux, the binary needs the Mono runtime installed to execute it. Just run it from CLI with `mono rebuild.exe`.
 
-- The MacOS binary has been compiled as a 32 bits binary due to Carbon driver has not been ported to 64 bits. It needs Mono runtime installed to execute it. Just run it from CLI with `mono --arch=32 rebuild.exe`.
+- In MacOS, the binary must be executed as a 32 bits binary due to Carbon driver has not been ported to 64 bits. It needs Mono runtime installed to execute it. Just run it from CLI with `mono --arch=32 rebuild.exe`.
 
-- The Windows binary is executed just double clicking on it as any .exe file. It can be also executed in Linux or MacOS using the Mono runtime and the instructions written below.
+- In Windows, the binary is executed just double clicking on it as any .exe file.
 
 The *src* has been refactored in order to be cross-platform and compatible with [Mono](https://www.mono-project.com/) compilation. It also can be compiled for x86 architectures.
 
-To compile the code for Linux or MacOS, use the [mkbundle tool](https://www.mono-project.com/docs/tools+libraries/tools/mkbundle/)
+To compile the code for Linux or MacOS native binaries, use the [mkbundle tool](https://www.mono-project.com/docs/tools+libraries/tools/mkbundle/)
 
 ### Binary password
 
@@ -49,7 +56,7 @@ The steps to use it are:
 
 ## Authors
 
-- ***cyrivs89*** (last version, refactoring, Mono compatible cross-platform and nsections and bytes save fixes)
+- ***cyrivs89*** (last version, fixed index issue, refactoring, Mono compatible cross-platform and nsections and bytes save fixes)
 - ***SkUaTeR*** (original dev)
 - ***codersk*** (changes to pick selected folder path)
 - ***varunpillai*** (WebEx audio changes) 
