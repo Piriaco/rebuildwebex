@@ -66,8 +66,7 @@ namespace rebuild
                         e_nsections = UInt32.Parse(nsections_hex, System.Globalization.NumberStyles.AllowHexSpecifier),
                         e_reserved1 = 0
                     };
-
-                    int video = 0;
+                   
                     ARF_ITEMS[] arf_item = new ARF_ITEMS[arf_head.e_nsections];
                     long Offset = Marshal.SizeOf(typeof(ARF_ITEMS)) * arf_head.e_nsections + Marshal.SizeOf(typeof(ARF_HEADER));
                     for (int x = 0; x < inputFiles.Count; x++)
@@ -80,12 +79,8 @@ namespace rebuild
                         arf_item[x].e_sectionoffset = (uint)Offset;
                         arf_item[x].e_sectionlen = (uint)f.Length;
 
-                        arf_item[x].e_index = 0;
-
-                        if (id == FileItems.SegmentType.video || id == FileItems.SegmentType.video_idx)
-                            arf_item[x].e_index = (uint)video;
-                        if (id == FileItems.SegmentType.video_idx)
-                            video++;
+                        // Index of file
+                        arf_item[x].e_index = (uint)inputFiles[x].index;
 
                         arf_item[x].e_reserved1 = 0;
                         arf_item[x].e_reserved2 = 0;
@@ -180,7 +175,7 @@ namespace rebuild
 
                 string[] Files_STD = Directory.GetFiles(path, "*.std", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
 
-                string[] Files_WAV = Directory.GetFiles(path, "*.wav", topDir);
+                string[] Files_WAV = Directory.GetFiles(path, "*.wav", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
 
                 string[] Files_VID = Directory.GetFiles(path, "*_4_*.dat", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
                 string[] Files_VID_IDX = Directory.GetFiles(path, "*_4_*.idx", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
@@ -190,8 +185,8 @@ namespace rebuild
                 string[] Files_FINMM_CAD = Directory.GetFiles(path, "*_6_*.cad", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
                 string[] Files_FINMM_CAI = Directory.GetFiles(path, "*_6_*.cai", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
 
-                string[] Files_SND = Directory.GetFiles(path, "*_20_*.dat", topDir);
-                string[] Files_SND_IDX = Directory.GetFiles(path, "*_20_*.idx", topDir);
+                string[] Files_SND = Directory.GetFiles(path, "*_20_*.dat", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
+                string[] Files_SND_IDX = Directory.GetFiles(path, "*_20_*.idx", topDir).OrderBy(o => new FileInfo(o).Name).ToArray();
 
                 string[] Files_BACKUP = Directory.GetFiles(path, "*_21_*.dat", topDir);
                 string[] Files_BACKUP_IDX = Directory.GetFiles(path, "*_21_*.idx", topDir);
@@ -208,13 +203,14 @@ namespace rebuild
                     if (Files_STD.Length > 0)
                     {
                         ToLog("[+] Chat file: " + Path.GetFileName(Files_STD[0]));
-                        containerList.Add(new FileItems(Files_STD[0], FileItems.SegmentType.chat));
+                        containerList.Add(new FileItems(Files_STD[0], FileItems.SegmentType.chat, 0));
                         dt.Rows.Add(AddFileToGrid(Files_STD[0]));
 
                         if (Files_STD.Length > 1)
                         {
-                            ToLog("[+] file file: " + Path.GetFileName(Files_STD[1]));
-                            containerList.Add(new FileItems(Files_STD[1], FileItems.SegmentType.file));
+
+                            ToLog("[+] File file: " + Path.GetFileName(Files_STD[1]));
+                            containerList.Add(new FileItems(Files_STD[1], FileItems.SegmentType.file, 0));
                             dt.Rows.Add(AddFileToGrid(Files_STD[1]));
                         }
                     }
@@ -227,7 +223,7 @@ namespace rebuild
                     if (Files_CFG.Length > 0)
                     {
                         ToLog("[+] Config file: " + Path.GetFileName(Files_CFG[0]));
-                        containerList.Add(new FileItems(Files_CFG[0], FileItems.SegmentType.cfg ));
+                        containerList.Add(new FileItems(Files_CFG[0], FileItems.SegmentType.cfg, 0));
                         dt.Rows.Add(AddFileToGrid(Files_CFG[0]));
                     }
                     else
@@ -242,13 +238,12 @@ namespace rebuild
                         {
                             // Add Video
                             ToLog(string.Format(@"[+] Video file {0}/{1} : {2}", x + 1, Files_VID.Length, Path.GetFileName(Files_VID[x].ToString())));
-
-                            containerList.Add(new FileItems(Files_VID[x], FileItems.SegmentType.video ));
+                            containerList.Add(new FileItems(Files_VID[x], FileItems.SegmentType.video, x));
                             dt.Rows.Add(AddFileToGrid(Files_VID[x]));
 
                             // Add Video index
                             ToLog(string.Format(@"[+] Index file {0}/{1} : {2}", x + 1, Files_VID_IDX.Length, Path.GetFileName(Files_VID[x].ToString())));
-                            containerList.Add(new FileItems(Files_VID_IDX[x], FileItems.SegmentType.video_idx ));
+                            containerList.Add(new FileItems(Files_VID_IDX[x], FileItems.SegmentType.video_idx, x));
                             dt.Rows.Add(AddFileToGrid(Files_VID_IDX[x]));
                         }
                     }
@@ -269,13 +264,12 @@ namespace rebuild
                         {
                             // Add Sound
                             ToLog(string.Format(@"[+] Sound file {0}/{1} : {2}", x + 1, Files_SND.Length, Path.GetFileName(Files_SND[x].ToString())));
-
-                            containerList.Add(new FileItems(Files_SND[x], FileItems.SegmentType.snd));
+                            containerList.Add(new FileItems(Files_SND[x], FileItems.SegmentType.snd, x));
                             dt.Rows.Add(AddFileToGrid(Files_SND[x]));
 
                             // Add Sound index
                             ToLog(string.Format(@"[+] Index file {0}/{1} : {2}", x + 1, Files_SND_IDX.Length, Path.GetFileName(Files_SND[x].ToString())));
-                            containerList.Add(new FileItems(Files_SND_IDX[x], FileItems.SegmentType.snd_idx));
+                            containerList.Add(new FileItems(Files_SND_IDX[x], FileItems.SegmentType.snd_idx, x));
                             dt.Rows.Add(AddFileToGrid(Files_SND_IDX[x]));
                         }
                     }
@@ -290,18 +284,18 @@ namespace rebuild
                     }
 
                     // Add WAV
-                    if (Files_WAV.Length == 1)
+                    if (Files_WAV.Length > 0)
                     {
-                        ToLog("[+] Wav file: " + Path.GetFileName(Files_WAV[0]));
-                        dt.Rows.Add(AddFileToGrid(Files_WAV[0]));
-                        containerList.Add(new FileItems(Files_WAV[0], FileItems.SegmentType.wav ));
+                        for (int x = 0; x < Files_WAV.Length; x++)
+                        {
+                            ToLog(string.Format(@"[+] Wav file {0}/{1} : {2}", x + 1, Files_WAV.Length, Path.GetFileName(Files_WAV[x].ToString())));
+                            dt.Rows.Add(AddFileToGrid(Files_WAV[x]));
+                            containerList.Add(new FileItems(Files_WAV[x], FileItems.SegmentType.wav, x));
+                        }
                     }
                     else
                     {
-                        if (Files_WAV.Length == 0)
-                            ToLog("[--] Wav file: Not found.");
-                        else
-                            ToLog("[--] Wav file: Too many wav files.");
+                        ToLog("[--] Wav file: Not found.");
                     }
 
                     // Add FIN_MM
@@ -309,7 +303,7 @@ namespace rebuild
                     {
                         ToLog("[+] MM_END file: " + Path.GetFileName(Files_FINMM[0]));
                         dt.Rows.Add(AddFileToGrid(Files_FINMM[0]));
-                        containerList.Add(new FileItems(Files_FINMM[0], FileItems.SegmentType.mmfin) );
+                        containerList.Add(new FileItems(Files_FINMM[0], FileItems.SegmentType.mmfin, 0));
                     }
                     else
                     {
@@ -323,7 +317,7 @@ namespace rebuild
                     {
                         ToLog("[+] MM_IDX file: " + Path.GetFileName(Files_FINMM_IDX[0]));
                         dt.Rows.Add(AddFileToGrid(Files_FINMM_IDX[0]));
-                        containerList.Add(new FileItems(Files_FINMM_IDX[0], FileItems.SegmentType.mmfin_idx) );
+                        containerList.Add(new FileItems(Files_FINMM_IDX[0], FileItems.SegmentType.mmfin_idx, 0));
                     }
                     else
                     {
@@ -336,13 +330,13 @@ namespace rebuild
                     {
                         ToLog("[+] MM_CAD file: " + Path.GetFileName(Files_FINMM_CAD[0]));
                         dt.Rows.Add(AddFileToGrid(Files_FINMM_CAD[0]));
-                        containerList.Add(new FileItems(Files_FINMM_CAD[0], FileItems.SegmentType.mmfin_cad));
+                        containerList.Add(new FileItems(Files_FINMM_CAD[0], FileItems.SegmentType.mmfin_cad, 0));
                     }
                     if (Files_FINMM_CAI.Length == 1)
                     {
                         ToLog("[+] MM_CAI file: " + Path.GetFileName(Files_FINMM_CAI[0]));
                         dt.Rows.Add(AddFileToGrid(Files_FINMM_CAI[0]));
-                        containerList.Add(new FileItems(Files_FINMM_CAI[0], FileItems.SegmentType.mmfin_cai));
+                        containerList.Add(new FileItems(Files_FINMM_CAI[0], FileItems.SegmentType.mmfin_cai, 0));
                     }
 
                     // Añadimos BACKUP
@@ -350,7 +344,7 @@ namespace rebuild
                     {
                         ToLog("[+] BACKUP file: " + Path.GetFileName(Files_BACKUP[0]));
                         dt.Rows.Add(AddFileToGrid(Files_BACKUP[0]));
-                        containerList.Add(new FileItems(Files_BACKUP[0],  FileItems.SegmentType.backup) );
+                        containerList.Add(new FileItems(Files_BACKUP[0],  FileItems.SegmentType.backup, 0));
                     }
                     else
                     {
@@ -365,7 +359,7 @@ namespace rebuild
                     {
                         ToLog("[+] BACKUP_IDX file: " + Path.GetFileName(Files_BACKUP_IDX[0]));
                         dt.Rows.Add(AddFileToGrid(Files_BACKUP_IDX[0]));
-                        containerList.Add(new FileItems(Files_BACKUP_IDX[0], FileItems.SegmentType.backup_idx));
+                        containerList.Add(new FileItems(Files_BACKUP_IDX[0], FileItems.SegmentType.backup_idx, 0));
                     }
                     else
                     {
@@ -485,10 +479,12 @@ namespace rebuild
 
         public string fileName;
         public SegmentType id;
-        public FileItems(string filename, SegmentType ts)
+        public int index;
+        public FileItems(string filename, SegmentType ts, int ix)
         {
             fileName = filename;
             id = ts;
+            index = ix;
         }
     }
 
