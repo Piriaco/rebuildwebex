@@ -1,0 +1,12 @@
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\bin\x64\Debug\rebuild.exe
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\bin\x64\Debug\rebuild.pdb
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.csprojAssemblyReference.cache
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.Form1.resources
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.Form2.resources
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.Properties.Resources.resources
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.csproj.GenerateResource.cache
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.csproj.CoreCompileInputs.cache
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.exe
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\obj\x64\Debug\rebuild.pdb
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\bin\x64\Debug\rebuild.exe.CodeAnalysisLog.xml
+C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\bin\x64\Debug\rebuild.exe.lastcodeanalysissucceeded

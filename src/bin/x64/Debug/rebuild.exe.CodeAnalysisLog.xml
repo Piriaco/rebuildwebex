@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Namespaces>
+  <Namespace Name="rebuild">
+   <Messages>
+    <Message Id="rebuild" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'rebuild' nel nome spazio dei nomi 'rebuild' modificandolo in 'Rebuild'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src\bin\x64\Debug\rebuild.exe">
+   <Modules>
+    <Module Name="rebuild.exe">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Firmare 'rebuild.exe' con una chiave con nome sicuro.</Issue>
+      </Message>
+      <Message Id="rebuild" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Correggere l'ortografia di 'rebuild' nel nome assembly 'rebuild.exe' modificandolo in 'Rebuild'.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Contrassegnare 'rebuild.exe' con CLSCompliant(true) poiché espone tipi visibili esternamente.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Warning">L'assembly 'rebuild.exe' contiene un file di risorse basato su ResX e quindi è necessario contrassegnarlo con l'attributo NeutralResourcesLanguage, specificando la lingua delle risorse all'interno dell'assembly. In tal modo si migliorano le prestazioni di ricerca di una risorsa che viene recuperata per la prima volta.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="rebuild">
+       <Types>
+        <Type Name="ARF_HEADER" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="ARF" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'ARF' nel nome tipo 'ARF_HEADER' modificandolo in 'Arf'.</Issue>
+          </Message>
+          <Message Id="HEADER" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'HEADER' nel nome tipo 'ARF_HEADER' modificandolo in 'Header'.</Issue>
+          </Message>
+          <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome tipo 'ARF_HEADER'.</Issue>
+          </Message>
+          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+           <Issue Name="Equals" Certainty="75" Level="Warning">'ARF_HEADER' deve eseguire l'override di Equals.</Issue>
+           <Issue Name="op_Equality" Certainty="75" Level="Warning">'ARF_HEADER' deve eseguire l'override degli operatori di uguaglianza (==) e disuguaglianza (!=).</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#e_filesize" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_HEADER.e_filesize' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_magic" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_HEADER.e_magic' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_nsections" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_HEADER.e_nsections' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_reserved0" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_HEADER.e_reserved0' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_reserved1" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_HEADER.e_reserved1' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_unknown" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_HEADER.e_unknown' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ARF_ITEMS" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="ARF" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'ARF' nel nome tipo 'ARF_ITEMS' modificandolo in 'Arf'.</Issue>
+          </Message>
+          <Message Id="ITEMS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'ITEMS' nel nome tipo 'ARF_ITEMS' modificandolo in 'Items'.</Issue>
+          </Message>
+          <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome tipo 'ARF_ITEMS'.</Issue>
+          </Message>
+          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+           <Issue Name="Equals" Certainty="75" Level="Warning">'ARF_ITEMS' deve eseguire l'override di Equals.</Issue>
+           <Issue Name="op_Equality" Certainty="75" Level="Warning">'ARF_ITEMS' deve eseguire l'override degli operatori di uguaglianza (==) e disuguaglianza (!=).</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#e_id" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_id' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_indice" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_indice' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_reserved1" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_reserved1' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_reserved2" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_reserved2' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_reserved3" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_reserved3' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_reserved4" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_reserved4' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_sectionlen" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_sectionlen' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#e_sectionoffset" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'ARF_ITEMS.e_sectionoffset' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FileItems" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.String,rebuild.FileItems+SegmentType)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="filename" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterShouldBeCompoundWord" Certainty="80" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="553">Nel membro 'FileItems.FileItems(string, FileItems.SegmentType)', il termine discreto 'filename' nel nome parametro 'filename' deve essere espresso come il termine composto 'fileName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#fileName" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'FileItems.fileName' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#id" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Poiché il campo 'FileItems.id' è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FileItems+SegmentType" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+           <Issue Name="NotFlagsNoZeroValue" Certainty="95" Level="CriticalError">Aggiungere a 'FileItems.SegmentType' un membro con valore zero e assegnargli il nome suggerito 'None'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#backup" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="backup" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'backup' nel nome membro 'FileItems.SegmentType.backup' modificandolo in 'Backup'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#backup_idx" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="backup" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'backup' nel nome membro 'FileItems.SegmentType.backup_idx' modificandolo in 'Backup'.</Issue>
+            </Message>
+            <Message Id="idx" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'idx' nel nome membro 'FileItems.SegmentType.backup_idx' modificandolo in 'Idx'.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome membro 'FileItems.SegmentType.backup_idx'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#cfg" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cfg" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'cfg' nel nome membro 'FileItems.SegmentType.cfg' modificandolo in 'Cfg'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#chat" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="chat" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'chat' nel nome membro 'FileItems.SegmentType.chat' modificandolo in 'Chat'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#file" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="file" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'file' nel nome membro 'FileItems.SegmentType.file' modificandolo in 'File'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#mmfin" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="mmfin" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'mmfin' nel nome membro 'FileItems.SegmentType.mmfin' modificandolo in 'Mmfin'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#mmfin_cad" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cad" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'cad' nel nome membro 'FileItems.SegmentType.mmfin_cad' modificandolo in 'Cad'.</Issue>
+            </Message>
+            <Message Id="mmfin" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'mmfin' nel nome membro 'FileItems.SegmentType.mmfin_cad' modificandolo in 'Mmfin'.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome membro 'FileItems.SegmentType.mmfin_cad'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#mmfin_cai" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cai" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'cai' nel nome membro 'FileItems.SegmentType.mmfin_cai' modificandolo in 'Cai'.</Issue>
+            </Message>
+            <Message Id="mmfin" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'mmfin' nel nome membro 'FileItems.SegmentType.mmfin_cai' modificandolo in 'Mmfin'.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome membro 'FileItems.SegmentType.mmfin_cai'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#mmfin_idx" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="idx" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'idx' nel nome membro 'FileItems.SegmentType.mmfin_idx' modificandolo in 'Idx'.</Issue>
+            </Message>
+            <Message Id="mmfin" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'mmfin' nel nome membro 'FileItems.SegmentType.mmfin_idx' modificandolo in 'Mmfin'.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome membro 'FileItems.SegmentType.mmfin_idx'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#snd" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="snd" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'snd' nel nome membro 'FileItems.SegmentType.snd' modificandolo in 'Snd'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#snd_idx" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="idx" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'idx' nel nome membro 'FileItems.SegmentType.snd_idx' modificandolo in 'Idx'.</Issue>
+            </Message>
+            <Message Id="snd" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'snd' nel nome membro 'FileItems.SegmentType.snd_idx' modificandolo in 'Snd'.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome membro 'FileItems.SegmentType.snd_idx'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#video" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="video" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'video' nel nome membro 'FileItems.SegmentType.video' modificandolo in 'Video'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#video_idx" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="idx" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'idx' nel nome membro 'FileItems.SegmentType.video_idx' modificandolo in 'Idx'.</Issue>
+            </Message>
+            <Message Id="video" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'video' nel nome membro 'FileItems.SegmentType.video_idx' modificandolo in 'Video'.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Rimuovere i caratteri di sottolineatura dal nome membro 'FileItems.SegmentType.video_idx'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#wav" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="wav" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correggere le maiuscole e minuscole di 'wav' nel nome membro 'FileItems.SegmentType.wav' modificandolo in 'Wav'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Form1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="14">Assicurarsi di impostare la proprietà Locale DataTable laddove 'Form1.Form1()' crea un'istanza di quel tipo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddFileToGrid(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.DateTime.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="181">Poiché il comportamento di 'DateTime.ToString()' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.AddFileToGrid(string)' con una chiamata a 'DateTime.ToString(IFormatProvider)'. Se il risultato di 'DateTime.ToString(IFormatProvider)' verrà visualizzato all'utente, specificare 'CultureInfo.CurrentCulture' come parametro 'IFormatProvider'. In caso contrario, se il risultato verrà archiviato e utilizzato dal software, come quando viene reso persistente nel disco o in un database, specificare 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="180">Poiché il comportamento di 'long.ToString()' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.AddFileToGrid(string)' con una chiamata a 'long.ToString(IFormatProvider)'. Se il risultato di 'long.ToString(IFormatProvider)' verrà visualizzato all'utente, specificare 'CultureInfo.CurrentCulture' come parametro 'IFormatProvider'. In caso contrario, se il risultato verrà archiviato e utilizzato dal software, come quando viene reso persistente nel disco o in un database, specificare 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Button1_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Elimina gli oggetti prima che siano esterni all'ambito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="448">Nel metodo 'Form1.Button1_Click(object, EventArgs)' chiamare System.IDisposable.Dispose sull'oggetto 'fbd' prima che tutti i relativi riferimenti siano esterni all'ambito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Button2_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Elimina gli oggetti prima che siano esterni all'ambito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="502">Nel metodo 'Form1.Button2_Click(object, EventArgs)' chiamare System.IDisposable.Dispose sull'oggetto 'f' prima che tutti i relativi riferimenti siano esterni all'ambito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FillDataGrid(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="188">'Form1.FillDataGrid(string)' contiene una complessità ciclomatica di 48. Riscrivere il metodo o effettuare il refactoring per ridurre la complessità a 25.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="188">'Form1.FillDataGrid(string)' contiene un indice di manutenibilità di 20. Riscrivere il metodo o effettuarne il refactoring per aumentare l'indice di manutenibilità (MI). Un MI inferiore a 10 indica una manutenibilità insufficiente, Un MI tra 10 e 20 indica una manutenibilità moderata e un MI superiore a 20 indica una buona manutenibilità.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="439">Modificare 'Form1.FillDataGrid(string)' in modo da rilevare un'eccezione più specifica di 'Exception' o generare di nuovo l'eccezione.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="Non passare valori letterali come parametri localizzati" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="208">Il metodo 'Form1.FillDataGrid(string)' passa una stringa letterale come parametro 'text' di una chiamata a 'MessageBox.Show(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: " FILES_CFG: ".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="235">Il metodo 'Form1.FillDataGrid(string)' passa una stringa letterale come parametro 'text' di una chiamata a 'MessageBox.Show(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Something failed, WebEx format may have changed".</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="276">Poiché il comportamento di 'string.Format(string, object, object, object)' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.FillDataGrid(string)' con una chiamata a 'string.Format(IFormatProvider, string, params object[])'. Se il risultato di 'string.Format(IFormatProvider, string, params object[])' verrà visualizzato all'utente, specificare 'CultureInfo.CurrentCulture' come parametro 'IFormatProvider'. In caso contrario, se il risultato verrà archiviato e utilizzato dal software, come quando viene reso persistente nel disco o in un database, specificare 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="282">Poiché il comportamento di 'string.Format(string, object, object, object)' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.FillDataGrid(string)' con una chiamata a 'string.Format(IFormatProvider, string, params object[])'. Se il risultato di 'string.Format(IFormatProvider, string, params object[])' verrà visualizzato all'utente, specificare 'CultureInfo.CurrentCulture' come parametro 'IFormatProvider'. In caso contrario, se il risultato verrà archiviato e utilizzato dal software, come quando viene reso persistente nel disco o in un database, specificare 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="304">Poiché il comportamento di 'string.Format(string, object, object, object)' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.FillDataGrid(string)' con una chiamata a 'string.Format(IFormatProvider, string, params object[])'. Se il risultato di 'string.Format(IFormatProvider, string, params object[])' verrà visualizzato all'utente, specificare 'CultureInfo.CurrentCulture' come parametro 'IFormatProvider'. In caso contrario, se il risultato verrà archiviato e utilizzato dal software, come quando viene reso persistente nel disco o in un database, specificare 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="310">Poiché il comportamento di 'string.Format(string, object, object, object)' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.FillDataGrid(string)' con una chiamata a 'string.Format(IFormatProvider, string, params object[])'. Se il risultato di 'string.Format(IFormatProvider, string, params object[])' verrà visualizzato all'utente, specificare 'CultureInfo.CurrentCulture' come parametro 'IFormatProvider'. In caso contrario, se il risultato verrà archiviato e utilizzato dal software, come quando viene reso persistente nel disco o in un database, specificare 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="208">Modificare 'Form1.FillDataGrid(string)' per chiamare l'overload di MessageBox.Show che specifichi MessageBoxOptions e assicurarsi di impostare MessageBoxOptions.RightAlign e MessageBoxOptions.RtlReading se RightToLeft è impostato su RightToLeft.Yes nel controllo padre.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="235">Modificare 'Form1.FillDataGrid(string)' per chiamare l'overload di MessageBox.Show che specifichi MessageBoxOptions e assicurarsi di impostare MessageBoxOptions.RightAlign e MessageBoxOptions.RtlReading se RightToLeft è impostato su RightToLeft.Yes nel controllo padre.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetBytes`1(!!0)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="480">Il parametro 'this' (o 'Me' in Visual Basic) di 'Form1.GetBytes&lt;T&gt;(T)' non è mai utilizzato. Contrassegnare il membro come static (o Shared in Visual Basic) o utilizzare 'this'/'Me' nel corpo del metodo o almeno una funzione di accesso delle proprietà, se appropriato.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetLastPart(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="26">Il parametro 'this' (o 'Me' in Visual Basic) di 'Form1.GetLastPart(string)' non è mai utilizzato. Contrassegnare il membro come static (o Shared in Visual Basic) o utilizzare 'this'/'Me' nel corpo del metodo o almeno una funzione di accesso delle proprietà, se appropriato.</Issue>
+            </Message>
+            <Message Id="System.String.IndexOf(System.String,System.Int32)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="28">Poiché il comportamento di 'string.IndexOf(string, int)' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.GetLastPart(string)' con una chiamata a 'string.IndexOf(string, int, StringComparison)'. Se il risultato di 'string.IndexOf(string, int, StringComparison)' sarà visualizzato all'utente, come durante l'ordinamento di un elenco di voci da visualizzare in una casella di riepilogo, specificare 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' come parametro 'StringComparison'. Se si confrontano identificatori senza distinzione tra maiuscole e minuscole, quali percorsi di file, variabili di ambiente o chiavi e valori del Registro di sistema, specificare 'StringComparison.OrdinalIgnoreCase'. In caso contrario, se si confrontano identificatori con distinzione tra maiuscole e minuscole, specificare 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="29">Poiché il comportamento di 'string.IndexOf(string, int)' potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in 'Form1.GetLastPart(string)' con una chiamata a 'string.IndexOf(string, int, StringComparison)'. Se il risultato di 'string.IndexOf(string, int, StringComparison)' sarà visualizzato all'utente, come durante l'ordinamento di un elenco di voci da visualizzare in una casella di riepilogo, specificare 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' come parametro 'StringComparison'. Se si confrontano identificatori senza distinzione tra maiuscole e minuscole, quali percorsi di file, variabili di ambiente o chiavi e valori del Registro di sistema, specificare 'StringComparison.OrdinalIgnoreCase'. In caso contrario, se si confrontano identificatori con distinzione tra maiuscole e minuscole, specificare 'StringComparison.Ordinal'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Non passare valori letterali come parametri localizzati" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.Designer.cs" Line="96">Il metodo 'Form1.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "About ...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.Designer.cs" Line="143">Il metodo 'Form1.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Amn3s1a - WebEx Rebuild Tool".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.Designer.cs" Line="50">Il metodo 'Form1.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Choose folder".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.Designer.cs" Line="108">Il metodo 'Form1.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Go".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.Designer.cs" Line="84">Il metodo 'Form1.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Quit".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Rebuild(System.Collections.Generic.List`1&lt;rebuild.FileItems&gt;,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Elimina gli oggetti prima che siano esterni all'ambito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="115">Nel metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' chiamare System.IDisposable.Dispose sull'oggetto 'streamOrigin' prima che tutti i relativi riferimenti siano esterni all'ambito.</Issue>
+            </Message>
+            <Message TypeName="Non eliminare gli oggetti più volte" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="145">L'oggetto 'stream' può essere eliminato più volte nel metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)'. Per evitare di generare System.ObjectDisposedException, è consigliabile chiamare Dispose su un oggetto non più di una volta.: Lines: 145, 147, 158</Issue>
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="145">L'oggetto 'writer' può essere eliminato più volte nel metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)'. Per evitare di generare System.ObjectDisposedException, è consigliabile chiamare Dispose su un oggetto non più di una volta.: Lines: 145, 147</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)" TypeName="Non passare valori letterali come parametri localizzati" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="143">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'caption' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Corrected".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="152">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'caption' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Sorry".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="127">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'caption' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "The program just ran out of memory!".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="128">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'caption' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "This may be fixed someday...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="127">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'text' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Error".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="128">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'text' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Info".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="143">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'text' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Reconstruction completed".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="152">Il metodo 'Form1.Rebuild(List&lt;FileItems&gt;, string)' passa una stringa letterale come parametro 'text' di una chiamata a 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Recuperare le seguenti stringhe da una tabella delle risorse: "The directory is not valid".</Issue>
+            </Message>
+            <Message Id="name" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="78">'Form1.Rebuild(List&lt;FileItems&gt;, string)' dichiara la variabile 'name' di tipo 'string' che non è mai utilizzata o è solo assegnata. Utilizzare questa variabile o rimuoverla.</Issue>
+            </Message>
+            <Message Id="reader" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="56">'Form1.Rebuild(List&lt;FileItems&gt;, string)' dichiara la variabile 'reader' di tipo 'BinaryReader' che non è mai utilizzata o è solo assegnata. Utilizzare questa variabile o rimuoverla.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="127">Modificare 'Form1.Rebuild(List&lt;FileItems&gt;, string)' per chiamare l'overload di MessageBox.Show che specifichi MessageBoxOptions e assicurarsi di impostare MessageBoxOptions.RightAlign e MessageBoxOptions.RtlReading se RightToLeft è impostato su RightToLeft.Yes nel controllo padre.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="128">Modificare 'Form1.Rebuild(List&lt;FileItems&gt;, string)' per chiamare l'overload di MessageBox.Show che specifichi MessageBoxOptions e assicurarsi di impostare MessageBoxOptions.RightAlign e MessageBoxOptions.RtlReading se RightToLeft è impostato su RightToLeft.Yes nel controllo padre.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="143">Modificare 'Form1.Rebuild(List&lt;FileItems&gt;, string)' per chiamare l'overload di MessageBox.Show che specifichi MessageBoxOptions e assicurarsi di impostare MessageBoxOptions.RightAlign e MessageBoxOptions.RtlReading se RightToLeft è impostato su RightToLeft.Yes nel controllo padre.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form1.cs" Line="152">Modificare 'Form1.Rebuild(List&lt;FileItems&gt;, string)' per chiamare l'overload di MessageBox.Show che specifichi MessageBoxOptions e assicurarsi di impostare MessageBoxOptions.RightAlign e MessageBoxOptions.RtlReading se RightToLeft è impostato su RightToLeft.Yes nel controllo padre.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Form2" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Non passare valori letterali come parametri localizzati" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2018-11-09 21:33:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form2.Designer.cs" Line="114">Il metodo 'Form2.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "CODED BY:".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form2.Designer.cs" Line="49">Il metodo 'Form2.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Good to know".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form2.Designer.cs" Line="92">Il metodo 'Form2.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "Piruzzolo".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form2.Designer.cs" Line="103">Il metodo 'Form2.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "SkUaTeR".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\Users\marco\Documents\WindowsPowerShell\rebuildwebex\src" File="Form2.Designer.cs" Line="61">Il metodo 'Form2.InitializeComponent()' passa una stringa letterale come parametro 'value' di una chiamata a 'Control.Text.set(string)'. Recuperare le seguenti stringhe da una tabella delle risorse: "varunpillai".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Gli assembly devono avere nomi sicuri validi</Name>
+   <Description>L'assembly non ha un nome sicuro oppure ha un nome sicuro non valido o valido solo all'interno della configurazione del computer. L'assembly non può essere distribuito in tale stato. Le cause più comuni sono le seguenti: 1) Il contenuto dell'assembly è stato modificato dopo la firma. 2) Il processo di firma non è riuscito. 3) All'assembly è stata applicata una firma ritardata. 4) Una chiave del Registro di sistema ha convalidato la verifica, che in altre circostanze non sarebbe riuscita.</Description>
+   <Resolution Name="NoStrongName">Firmare {0} con una chiave con nome sicuro.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502">
+   <Name>Evitare complessità eccessiva</Name>
+   <Description>Le implementazioni dei metodi estremamente complesse aumentano la necessità di comprensione e gestione del codice.</Description>
+   <Resolution Name="Default">{0} contiene una complessità ciclomatica di {1}. Riscrivere il metodo o effettuare il refactoring per ridurre la complessità a {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182212.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505">
+   <Name>Evitare codice non gestibile</Name>
+   <Description>I tipi e i metodi con numerosi accoppiamenti di classi, elevata complessità ciclomatica e/o lunghezza del programma possono essere difficili da gestire.</Description>
+   <Resolution Name="Method">{0} contiene un indice di manutenibilità di {1}. Riscrivere il metodo o effettuarne il refactoring per aumentare l'indice di manutenibilità (MI). Un MI inferiore a {2} indica una manutenibilità insufficiente, Un MI tra {2} e {3} indica una manutenibilità moderata e un MI superiore a {3} indica una buona manutenibilità.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386043.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Le parole composte devono essere digitate correttamente con distinzione tra maiuscole e minuscole</Name>
+   <Description>Evitare di creare parole composte con termini presenti nel dizionario come termini discreti. Non creare una parola composta come 'StopWatch' o 'PopUp'. Questi termini sono riconosciuti nel dizionario e devono essere digitati 'Stopwatch' e 'Popup'.</Description>
+   <Resolution Name="MemberParameterShouldBeCompoundWord">Nel membro {0}, il termine discreto '{1}' nel nome parametro {2} deve essere espresso come il termine composto '{3}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Non rilevare tipi di eccezione generali</Name>
+   <Description>Evitare di rilevare Exception o SystemException. Il rilevamento di tipi di eccezioni generici può nascondere i problemi di runtime all'utente della libreria e complicare il debug. È consigliabile rilevare soltanto le eccezioni che è possibile gestire facilmente.</Description>
+   <Resolution Name="Default">Modificare {0} in modo da rilevare un'eccezione più specifica di {1} o generare di nuovo l'eccezione.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+   <Name>Non dichiarare campi di istanza visibili</Name>
+   <Description>I campi di istanza visibili all'esterno del tipo che li dichiara, limitano la possibilità di modificare i dettagli dell'implementazione per gli elementi di dati. Utilizzare le proprietà che non compromettono l'usabilità o le prestazioni e forniscono la flessibilità per conciliare i dettagli dell'implementazione dei dati sottostanti.</Description>
+   <Resolution Name="Default">Poiché il campo {0} è visibile all'esterno del rispettivo tipo dichiarante, impostarne l'accessibilità su private e aggiungere una proprietà con la stessa accessibilità attuale del campo per potervi accedere.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182141.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Elimina gli oggetti prima che siano esterni all'ambito" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Elimina gli oggetti prima che siano esterni all'ambito</Name>
+   <Description>Se un oggetto eliminabile non viene eliminato in modo esplicito prima che tutti i riferimenti a esso siano esterni all'ambito, verrà eliminato in un momento indeterminato quando il relativo finalizzatore verrà eseguito dal Garbage Collector. Poiché un evento eccezionale potrebbe impedire l'esecuzione del finalizzatore dell'oggetto, è preferibile che l'oggetto venga eliminato in modo esplicito.</Description>
+   <Resolution Name="NonExceptionEdge">Nel metodo {0} chiamare System.IDisposable.Dispose sull'oggetto {1} prima che tutti i relativi riferimenti siano esterni all'ambito.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008">
+   <Name>Le enumerazioni devono avere valore zero</Name>
+   <Description>Un'enumerazione ha generalmente valore zero. Se l'enumerazione non è decorata con l'attributo Flags, dovrà contenere un membro con valore zero che rappresenta lo stato vuoto. Facoltativamente, questo valore è denominato 'None'. Per un'enumerazione con attributo Flags, il membro con valore zero è facoltativo e, se presente, deve essere sempre denominato 'None'. Questo valore deve indicare che non è stato impostato alcun valore nell'enumerazione. L'uso di un membro con valore zero per altri scopi è contrario all'utilizzo dell'attributo Flags perché gli operatori AND e OR bit per bit non hanno alcuna utilità in relazione al membro.</Description>
+   <Resolution Name="NotFlagsNoZeroValue">Aggiungere a {0} un membro con valore zero e assegnargli il nome suggerito 'None'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182149.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Gli identificatori devono essere digitati correttamente con distinzione tra maiuscole e minuscole</Name>
+   <Description>Gli identificatori di tipi, spazi dei nomi e membri vengono scritti utilizzando la convezione Pascal. Gli identificatori di parametri vengono scritti con le maiuscole/minuscole camel. Gli acronimi composti da due lettere presenti in questi identificatori devono essere scritti in maiuscolo. Ad esempio, utilizzare System.IO invece di System.Io. Gli acronimi composti da tre o più lettere devono essere scritti utilizzando la convenzione Pascal. Ad esempio, utilizzare System.Xml invece di System.XML. Secondo la convenzione Pascal, la prima lettera di ogni parola deve essere scritta in maiuscolo, come in BackColor. Secondo la convenzione camel, la prima lettera della prima parola deve essere scritta in minuscolo e la prima lettera di tutte le parole successive deve essere scritta in maiuscolo, come in backgroundColor. Sebbene sia pratica comune scrivere determinati acronimi di due lettere non tutti in maiuscolo, è necessario comunque rispettare la regola. Ad esempio, 'DbConnection' è comune ma non corretto, utilizzare invece DBConnection. Una violazione a questa regola potrebbe essere necessaria per la compatibilità con gli schemi esistenti di simboli non gestiti. Tuttavia, come regola generale questi simboli non devono essere visibili al di fuori dell'assembly che li utilizza.</Description>
+   <Resolution Name="Assembly">Correggere l'ortografia di '{0}' nel nome assembly {1} modificandolo in '{2}'.</Resolution>
+   <Resolution Name="Member">Correggere le maiuscole e minuscole di '{0}' nel nome membro {1} modificandolo in '{2}'.</Resolution>
+   <Resolution Name="Namespace">Correggere le maiuscole e minuscole di '{0}' nel nome spazio dei nomi '{1}' modificandolo in '{2}'.</Resolution>
+   <Resolution Name="Type">Correggere le maiuscole e minuscole di '{0}' nel nome tipo {1} modificandolo in '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+   <Name>Gli identificatori non devono contenere caratteri di sottolineatura</Name>
+   <Description>Non utilizzare i caratteri di sottolineatura quando si specificano gli identificatori. Alcuni identificatori di Visual Studio generati per le applicazioni contengono caratteri di sottolineatura. I caratteri di sottolineatura generalmente devono essere evitati negli identificatori pubblici.</Description>
+   <Resolution Name="Member">Rimuovere i caratteri di sottolineatura dal nome membro {0}.</Resolution>
+   <Resolution Name="Type">Rimuovere i caratteri di sottolineatura dal nome tipo {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182245.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Contrassegnare gli assembly con CLSCompliantAttribute</Name>
+   <Description>Gli assembly devono dichiarare in modo esplicito la propria conformità a CLS tramite l'attributo CLSCompliant. Un assembly senza tale attributo non è conforme a CLS. Assembly, moduli e tipi possono essere conformi a CLS anche se alcune parti di essi non lo sono. Vengono applicate le seguenti regole: 1) Se l'elemento è contrassegnato come CLSCompliant, qualsiasi membro non conforme dovrà disporre dell'attributo CLSCompliant con l'argomento impostato su false. 2) Per ogni membro non conforme a CLS è necessario fornire un membro alternativo valido conforme a CLS.</Description>
+   <Resolution Name="Default">Contrassegnare {0} con CLSCompliant(true) poiché espone tipi visibili esternamente.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+   <Name>Contrassegnare gli assembly con NeutralResourcesLanguageAttribute</Name>
+   <Description>L'attributo NeutralResourcesLanguage informa ResourceManager della lingua utilizzata per eseguire il rendering delle risorse delle impostazioni cultura non associate ad alcun paese per un assembly. Quando le risorse vengono ricercate nelle stesse impostazioni cultura della lingua delle risorse non associate ad alcun paese, ResourceManager utilizza automaticamente le risorse presenti nell'assembly principale invece di ricercare un assembly satellite con le impostazioni cultura dell'interfaccia utente corrente per il thread corrente. In tal modo si migliorano le prestazioni di ricerca per la prima risorsa caricata e si riduce il working set.</Description>
+   <Resolution Name="Default">L'assembly {0} contiene un file di risorse basato su ResX e quindi è necessario contrassegnarlo con l'attributo NeutralResourcesLanguage, specificando la lingua delle risorse all'interno dell'assembly. In tal modo si migliorano le prestazioni di ricerca di una risorsa che viene recuperata per la prima volta.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb385967.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Contrassegna i membri come statici</Name>
+   <Description>I metodi che non accedono ai dati di istanza o chiamano metodi di istanza possono essere contrassegnati come static (Shared in Visual Basic). Il compilatore invierà quindi siti di chiamata non virtuali a questi membri in modo da evitare un controllo in fase di esecuzione per ogni chiamata che accerti che il puntatore dell'oggetto corrente sia diverso da null. Si potrà così ottenere un sensibile miglioramento delle prestazioni per codici sensibili alle prestazioni. In alcuni casi, l'accesso non riuscito all'istanza dell'oggetto corrente rappresenta un problema di correzione.</Description>
+   <Resolution Name="Default">Il parametro 'this' (o 'Me' in Visual Basic) di {0} non è mai utilizzato. Contrassegnare il membro come static (o Shared in Visual Basic) o utilizzare 'this'/'Me' nel corpo del metodo o almeno una funzione di accesso delle proprietà, se appropriato.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Non eliminare gli oggetti più volte" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Non eliminare gli oggetti più volte</Name>
+   <Description>È possibile chiamare più volte un metodo Dispose implementato in modo corretto senza che vengano generate eccezioni. Poiché tuttavia tale risultato non è garantito, per evitare di generare System.ObjectDisposedException è consigliabile chiamare Dispose su un oggetto non più di una volta.</Description>
+   <Resolution Name="Default">L'oggetto {0} può essere eliminato più volte nel metodo {1}. Per evitare di generare System.ObjectDisposedException, è consigliabile chiamare Dispose su un oggetto non più di una volta.: Lines: 145, 147</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Non passare valori letterali come parametri localizzati" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>Non passare valori letterali come parametri localizzati</Name>
+   <Description>Le stringhe letterali incorporate nel codice sorgente sono di difficile localizzazione. Evitare di passare stringhe letterali come argomenti nei casi in cui è generalmente prevista una stringa localizzata.</Description>
+   <Resolution Name="KnownValue">Il metodo {0} passa una stringa letterale come parametro '{1}' di una chiamata a {2}. Recuperare le seguenti stringhe da una tabella delle risorse: {3}.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815">
+   <Name>Eseguire l'override di Equals e dell'operatore "uguale a" sui tipi di valore</Name>
+   <Description>L'implementazione predefinita System.ValueType potrebbe non essere eseguita come un'implementazione personalizzata.</Description>
+   <Resolution Name="Equals">{0} deve eseguire l'override di Equals.</Resolution>
+   <Resolution Name="op_Equality">{0} deve eseguire l'override degli operatori di uguaglianza (==) e disuguaglianza (!=).</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182276.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Rimuovere locali non utilizzati</Name>
+   <Description>Rimuovere i locali che non sono utilizzati o sono solo assegnati nelle implementazioni di un metodo.</Description>
+   <Resolution Name="Default">{0} dichiara la variabile {1} di tipo {2} che non è mai utilizzata o è solo assegnata. Utilizzare questa variabile o rimuoverla.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306">
+   <Name>Specificare le impostazioni locali per i tipi di dati</Name>
+   <Description>Nella maggior parte dei casi, Locale deve essere impostato in modo esplicito su CultureInfo.InvariantCulture nelle istanze DataSet e DataTable. Alla creazione di un'istanza DataSet o DataTable, Locale è impostato sulle impostazioni cultura correnti. Nella maggior parte dei casi Locale deve essere impostato su CultureInfo.InvariantCulture per garantire l'appropriato comportamento dell'ordinamento in tutte le impostazioni cultura.</Description>
+   <Resolution Name="Default">Assicurarsi di impostare la proprietà Locale {0} laddove {1} crea un'istanza di quel tipo.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182188.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specificare IFormatProvider</Name>
+   <Description>Se esiste un overload che accetta un argomento IFormatProvider, deve essere sempre chiamato a vantaggio di un overload che non lo accetta. Alcuni metodi in fase di esecuzione convertono un valore in o da una rappresentazione di stringa e utilizzano un parametro di stringa che contiene uno o più caratteri, chiamati identificatori di formato, che indicano come deve essere convertito il valore. Se il significato dell'identificatore di formato varia secondo le impostazioni cultura, i caratteri effettivamente utilizzati nella rappresentazione di stringa verranno forniti mediante un oggetto formattazione. In scenari dove il comportamento del confronto e dell'ordinamento non deve mai cambiare tra le impostazioni cultura, specificare CultureInfo.InvariantCulture, altrimenti specificare CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternateString">Poiché il comportamento di {0} potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in {1} con una chiamata a {2}. Se il risultato di {2} verrà visualizzato all'utente, specificare {3} come parametro 'IFormatProvider'. In caso contrario, se il risultato verrà archiviato e utilizzato dal software, come quando viene reso persistente nel disco o in un database, specificare {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+   <Name>Specificare MessageBoxOptions</Name>
+   <Description>Per un'esecuzione corretta nei sistemi da destra a sinistra, tutte le chiamate a MessageBox.Show devono utilizzare l'overload che specifichi MessageBoxOptions come argomento. I programmi devono determinare in fase di esecuzione se sono un esecuzione in un sistema da destra a sinistra e passare l'appropriato valore MessageBoxOptions per visualizzarlo correttamente.</Description>
+   <Resolution Name="Default">Modificare {0} per chiamare l'overload di MessageBox.Show che specifichi MessageBoxOptions e assicurarsi di impostare MessageBoxOptions.RightAlign e MessageBoxOptions.RtlReading se RightToLeft è impostato su RightToLeft.Yes nel controllo padre.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182191.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+   <Name>Specificare StringComparison</Name>
+   <Description>Se un overload utilizza un argomento StringComparison, deve sempre essere chiamato a vantaggio di un'overload che non lo utilizza.</Description>
+   <Resolution Name="Default">Poiché il comportamento di {0} potrebbe variare in base alle impostazioni locali dell'utente corrente, sostituire questa chiamata in {1} con una chiamata a {2}. Se il risultato di {2} sarà visualizzato all'utente, come durante l'ordinamento di un elenco di voci da visualizzare in una casella di riepilogo, specificare 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' come parametro 'StringComparison'. Se si confrontano identificatori senza distinzione tra maiuscole e minuscole, quali percorsi di file, variabili di ambiente o chiavi e valori del Registro di sistema, specificare 'StringComparison.OrdinalIgnoreCase'. In caso contrario, se si confrontano identificatori con distinzione tra maiuscole e minuscole, specificare 'StringComparison.Ordinal'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386080.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoria</String>
+  <String Key="Certainty">Attendibilità</String>
+  <String Key="CollapseAll">Comprimi tutto</String>
+  <String Key="CheckId">ID controllo</String>
+  <String Key="Error">Errore</String>
+  <String Key="Errors">errori</String>
+  <String Key="ExpandAll">Espandi tutto</String>
+  <String Key="Help">Guida</String>
+  <String Key="Line">Riga</String>
+  <String Key="Messages">messaggi</String>
+  <String Key="LocationNotStoredInPdb">[Percorso non archiviato nel PDB]</String>
+  <String Key="Project">Progetto</String>
+  <String Key="Resolution">Risoluzione</String>
+  <String Key="Rule">Regola</String>
+  <String Key="RuleFile">File delle regole</String>
+  <String Key="RuleDescription">Descrizione regola</String>
+  <String Key="Source">Origine</String>
+  <String Key="Status">Stato</String>
+  <String Key="Target">Destinazione</String>
+  <String Key="Warning">Avviso</String>
+  <String Key="Warnings">avvisi</String>
+  <String Key="ReportTitle">Report di analisi codice</String>
+ </Localized>
+</FxCopReport>
