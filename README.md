@@ -44,7 +44,7 @@ The steps to use it are:
 1. Play the WebEx recording from the meeting website.
 2. It should run the WeBex player. Pause the video and wait until the bottom bar is completely loaded (all blue).
 3. Without close the player, locate the folder with the session data. Order by date and it should show up as a folder whose name has several numbers.
-	- In Windows, the path is C:\Users\[user_name]\AppData\Local\Temp\[XXXXXXXX]
+	- In Windows, the path is C:\Users\\[user_name]\AppData\Local\Temp\[XXXXXXXX]
 	- In Linux, the path is /home/[user_name]/.webex/500/[XXXXXXXX]
 	- In MacOS, the path is /Users/[user_name]/Library/Application\ Support/WebEx\ Folder/64_500/[XXXXXXXX]
 4. Copy the number folder to a new location.
